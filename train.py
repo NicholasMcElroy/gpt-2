@@ -271,12 +271,12 @@ def main():
         avg_loss = (0.0, 0.0)
         start_time = time.time()
 
-        # print('Evaluating grads..')
-        # tf2.profiler.experimental.start('logdir')
-        # sess.run((opt_apply, train_loss, summaries), feed_dict={train_context: sample_batch()})
-        # tf2.profiler.experimental.stop()
-        # print('Succeeded')
-        # exit()
+        print('Evaluating grads..')
+        tf2.profiler.experimental.start('logdir')
+        sess.run((opt_apply, train_loss, summaries), feed_dict={train_context: sample_batch()})
+        tf2.profiler.experimental.stop()
+        print('Succeeded')
+        exit()
 
         try:
             while True:
